@@ -19,5 +19,16 @@ HAVING AVG(ISNULL(DATEDIFF(SECOND, call.start_time, call.end_time),0)) > (SELECT
 ORDER BY calls DESC, country.id ASC;";
 
 echo SqlFormatter::format($query);
+echo '<br />';echo '<br />';
 
+echo '<b>SQL Highlight Query</b>';
+echo '<br />';
+echo '<br />';
+echo SqlFormatter::highlight($query);
+echo '<br />';echo '<br />';
+
+echo '<b>SQL Compress</b>';
+echo '<br />';
+echo '<br />';
+echo SqlFormatter::compress($query)
 ?>
